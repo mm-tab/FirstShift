@@ -1,4 +1,3 @@
-# Veritas-AI-Hackathon-Project
 # FirstShift: spot fake job postings before you apply
 
 **Track:** Finance
