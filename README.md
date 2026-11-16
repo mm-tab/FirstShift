@@ -1,7 +1,7 @@
 # FirstShift: spot fake job postings before you apply
 
 **Track:** Finance
-**Team:** Mason Moghadam
+**Team:** Mason Moghadam (solo)
 
 **This project is a prototype and is not financial advice.**
 
@@ -10,13 +10,13 @@
 ## The problem
 Job scams are growing fast. Reported U.S. losses rose from $90 million in 2020 to $501 million in 2024 (FTC). For 18–24-year-olds, employment scams are the riskiest scam type: almost 30% of their reports to the BBB, with a median loss of $1,819. Teens and young adults applying for their first jobs often can't tell a real posting from a fake one, and the jobs they qualify for (part-time, entry level, remote) are the kind scammers imitate.
 
-## What we built
+## What I built
 FirstShift is a machine learning tool for a teen applying for their first job online. They paste in a job posting, and FirstShift returns how likely it is to be fake, plus the "red flag" words in that posting that suggest a scam, so they learn what to watch for themselves.
 
 **How to run it:** open the Colab link above, click **Runtime → Run all**, and use the demo link printed by the last cell. The training data downloads automatically, and the 2026 test set loads from this repo.
 
-## What we added
-Our own idea (not a suggested project). Beyond building a scam classifier, I:
+## What I added
+My own idea (not a suggested project). Beyond building a scam classifier, I:
 1. **Designed it around one user,** a teen looking for a first job, and tested it specifically on postings a teen could apply for (part-time, temporary, entry level, or no degree required).
 2. **Audited it for fairness to teen jobs:** checked whether it wrongly flags real entry-level, internship and remote jobs more often than other jobs, since a tool that scares teens away from real jobs would do harm.
 3. **Tested it on 2026-style scams:** built a separate test set of 40 synthetic postings (20 modern scams, 20 real teen jobs) to see if a model trained on 2012–14 data still works today.
@@ -39,7 +39,7 @@ Test set: 3,576 postings, 173 fake.
 
 *Precision: of postings flagged as scams, how many really were. Recall: of the real scams, how many were caught.*
 
-Our baseline (the logo rule) caught 60% of scams; FirstShift caught 86% on held-out postings it had never seen, with far fewer false alarms.
+The stronger baseline (the logo rule) caught 60% of scams; FirstShift caught 86% on held-out postings it had never seen, with far fewer false alarms.
 
 **Teen-focused results:**
 - **Fair to teen-type jobs:** real entry-level, internship and remote jobs were wrongly flagged 0.7% of the time, about the same as other real jobs (1.1%).
@@ -54,7 +54,7 @@ Our baseline (the logo rule) caught 60% of scams; FirstShift caught 86% on held-
 
 **Limitations:** the training data is from 2012–14; the 2026 test set is small (40) and AI-written; "teen-eligible" is my own definition; FirstShift only reads the posting's text and doesn't check the company or recruiter.
 
-## What we'd do next
+## What I'd do next
 1. Retrain on modern scam data to close the gap on 2026-style scams, and remove duplicate postings before splitting.
 2. Add the posting's details (company logo, remote, screening questions) as features, and test the demo with more teens applying for real jobs.
 
